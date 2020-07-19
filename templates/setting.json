@@ -1,0 +1,145 @@
+{
+  "menu": [
+    {
+      "id": "left_menu",
+      "align": "left",
+      "items": [
+        {
+          "id": "member",
+          "display": "會員",
+          "items": [
+            {
+              "id": "member_list",
+              "display": "會員列表",
+              "link": "members/list"
+            },
+            {
+              "id": "invite_member",
+              "display": "邀請會員",
+              "link": "members/invite",
+              "hide": true
+            }
+          ]
+        },
+        {
+          "id": "logout",
+          "display": "登出",
+          "link": "logout"
+        }
+      ]
+    }
+  ],
+  "datetime_picker": [
+    {
+      "id": "report_range",
+      "lable": "報表範圍",
+      "format": "YYYY-MM-DD",
+      "date_only": false,
+      "range": {
+        "max": 1593523406,
+        "min": 1593437006
+      }
+    }
+  ],
+  "checkbox_group": [
+    {
+      "id": "sex",
+      "label": "性別",
+      "exclusive": true,
+      "items": [
+        {
+          "id": "male",
+          "label": "男"
+        },
+        {
+          "id": "female",
+          "label": "女"
+        }
+      ]
+    }
+  ],
+  "combo_box": {
+    "id": "language",
+    "label": "語言",
+    "placeholder": "請選擇你的語言",
+    "items": [
+      {
+        "value": "zh-Tw",
+        "label": "繁體中文"
+      },
+      {
+        "value": "en",
+        "label": "English"
+      }
+    ],
+    "default": null
+  },
+  "text_input": [
+    {
+      "id": "member_id",
+      "label": "會員名稱",
+      "describedby": "英文字母開頭與數字、底線組合至少八個字元",
+      "validator": "^[[:alpha:]]\\w{7,}$",
+      "icon": "member_icon"
+    },
+    {
+      "id": "keyword",
+      "label": "關鍵字",
+      "placeholder": "請輸入關鍵字",
+      "suggestions": [
+        "神奇",
+        "神奇寶貝",
+        "神啊救救我吧"
+      ]
+    }
+  ],
+  "form": {
+    "sub_widgets": [
+      {
+        "class": "datetime_picker",
+        "instance": {
+          "id": "report_range",
+          "lable": "報表範圍",
+          "format": "YYYY-MM-DD",
+          "date_only": true,
+          "range": {
+            "max": 1593523406,
+            "min": 1593437006
+          }
+        }
+      },
+      {
+        "class": "checkbox_group",
+        "instance": {
+          "id": "game",
+          "label": "遊戲",
+          "exclusive": false,
+          "items": [
+            {
+              "id": "baseball",
+              "label": "棒球"
+            },
+            {
+              "id": "basketball",
+              "label": "籃球"
+            }
+          ]
+        }
+      },
+      {
+        "class": "text_input",
+        "instance": {
+          "id": "member_id",
+          "label": "會員名稱",
+          "validator": "^[[:alpha:]]\\w{7,}$",
+          "suggestions": [
+            "hello577",
+            "hyper018",
+            "helicopter8888"
+          ],
+          "icon": "member_icon"
+        }
+      }
+    ]
+  }
+}

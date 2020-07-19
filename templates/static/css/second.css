@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+.form{
+    height: calc(100vh - 10px);
+
+}
+
+.edit{
+    height: 100%;
+    width: 20%;
+    border:5px #FFAC55 solid;
+    background-color:#FFF;
+}
+
+.view{
+    position: absolute;
+    top:0;
+    left: calc(20% + 10px);
+    height: 100%;
+    width: calc(80% - 10px);
+    color: #FFF;
+    background-color: #404040;
+}
+.draw{
+
+}
