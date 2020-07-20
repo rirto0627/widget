@@ -23,14 +23,17 @@
 
         {% if key == 'menu' %}
             <div class="section">
-                <table class="table table-condensed">
-                    {% for context in all %}
-                        {{ context.id }}<br>
-                        {{ context.align }}<br>
+
+                {% for context in all %}
+{#                    style="position: absolute;{{ context.align }}:0"#}
+{#                    context.align 未設定#}
+                    <div id='{{ context.id }}'>
                         {% if context != None %}
                             {% for context2 in context.items %}
+                                <li><a href="#">{{ context2.display }}</a>
+        </li>
                                 {{ context2.id }}<br>
-                                {{ context2.display }}<br>
+                                <br>
                                 {% if context2.items != None %}
                                     {% for context3 in context2.items %}
                                         {{ context3.id }}<br>
@@ -44,9 +47,9 @@
                                 {{ context2.items }}
                             {% endfor %}
                         {% endif %}
+                    </div>
+                {% endfor %}
 
-                    {% endfor %}
-                </table>
             </div>
         {% endif %}
         {% if key == 'datetime_picker' %}
@@ -58,65 +61,65 @@
         {% endif %}
         {% if key == 'checkbox_group' %}
             <div id="checkbox_group">
-                <table class="table table-condensed">
-                    {% for context in all %}
-                        {{ context.id }}<br>
-                        {{ context.label }}<br>
-                        {{ context.exclusive }}<br>
-                        {% for context2 in context.items %}
-                            {{ context2.id }}<br>
-                            {{ context2.label }}
-                        {% endfor %}
+
+                {% for context in all %}
+                    {{ context.id }}<br>
+                    {{ context.label }}<br>
+                    {{ context.exclusive }}<br>
+                    {% for context2 in context.items %}
+                        {{ context2.id }}<br>
+                        {{ context2.label }}
                     {% endfor %}
-                </table>
+                {% endfor %}
+
             </div>
         {% endif %}
         {% if key == 'combo_box' %}
             <div id="combo_box">
-                <table class="table table-condensed">
-                    {% for context in all %}
-                        {{ context.id }}<br>
-                        {{ context.label }}<br>
-                        {{ context.placeholder }}<br>
-                        {% for context2 in context.items %}
-                            {{ context2.value }}<br>
-                            {{ context2.label }}
-                        {% endfor %}
+
+                {% for context in all %}
+                    {{ context.id }}<br>
+                    {{ context.label }}<br>
+                    {{ context.placeholder }}<br>
+                    {% for context2 in context.items %}
+                        {{ context2.value }}<br>
+                        {{ context2.label }}
                     {% endfor %}
-                </table>
+                {% endfor %}
+
             </div>
         {% endif %}
         {% if key == 'text_input' %}
             <div id="text_input">
-                <table class="table table-condensed">
-                    {% for context in all %}
-                        {{ context.id }}<br>
-                        {{ context.label }}<br>
-                        {{ context.validator }}<br>
-                        {{ context.icon }}<br>
-                        {{ context.placeholder }}<br>
-                        {% for context2 in context.suggestions %}
-                            {{ context2 }}
-                        {% endfor %}
+
+                {% for context in all %}
+                    {{ context.id }}<br>
+                    {{ context.label }}<br>
+                    {{ context.validator }}<br>
+                    {{ context.icon }}<br>
+                    {{ context.placeholder }}<br>
+                    {% for context2 in context.suggestions %}
+                        {{ context2 }}
                     {% endfor %}
-                </table>
+                {% endfor %}
+
             </div>
         {% endif %}
         {% if key == 'form' %}
             <div id="form">
-                <table class="table table-condensed">
 
-                    {% for context in all %}
-                        {% for context2 in context.sub_widgets %}
-                            {{ context2.class }}<br>
 
-                            {% for context3 in context2.instance %}
-                                {{ context3 }}<br>
-                            {% endfor %}
+                {% for context in all %}
+                    {% for context2 in context.sub_widgets %}
+                        {{ context2.class }}<br>
+
+                        {% for context3 in context2.instance %}
+                            {{ context3 }}<br>
                         {% endfor %}
                     {% endfor %}
+                {% endfor %}
 
-                </table>
+
             </div>
         {% endif %}
     {% endfor %}
