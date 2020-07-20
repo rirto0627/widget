@@ -12,12 +12,6 @@
               "id": "member_list",
               "display": "會員列表",
               "link": "members/list"
-            },
-            {
-              "id": "invite_member",
-              "display": "邀請會員",
-              "link": "members/invite",
-              "hide": true
             }
           ]
         },
@@ -58,7 +52,7 @@
       ]
     }
   ],
-  "combo_box": {
+  "combo_box": [{
     "id": "language",
     "label": "語言",
     "placeholder": "請選擇你的語言",
@@ -73,7 +67,7 @@
       }
     ],
     "default": null
-  },
+  }],
   "text_input": [
     {
       "id": "member_id",
@@ -93,7 +87,7 @@
       ]
     }
   ],
-  "form": {
+  "form": [{
     "sub_widgets": [
       {
         "class": "datetime_picker",
@@ -141,5 +135,5 @@
         }
       }
     ]
-  }
+  }]
 }
